@@ -1,150 +1,97 @@
-<p align="center">
-  <img src="assets/logo.svg" alt="Gahshomar Logo" width="120" height="120">
-</p>
-
-<h1 align="center">Gahshomar</h1>
-<h3 align="center">گاه‌شمار</h3>
-
-<p align="center">
-  <strong>A powerful, pure Java library for Persian (Jalali), Hijri, and Gregorian date conversion</strong>
-</p>
-
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#api-reference">API Reference</a> •
-  <a href="#contributing">Contributing</a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17+">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build">
-  <img src="https://jitpack.io/v/abolpv/gahshomar.svg?style=for-the-badge" alt="JitPack">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Zero-Dependencies-success?style=flat-square" alt="Zero Dependencies">
-  <img src="https://img.shields.io/badge/100%25-Pure%20Java-orange?style=flat-square" alt="Pure Java">
-  <img src="https://img.shields.io/badge/Kotlin-Compatible-7F52FF?style=flat-square" alt="Kotlin Compatible">
-</p>
+<div align="center">
+  <img src="assets/logo.svg" alt="Gahshomar Logo" width="180" height="180">
+  
+  # گاه‌شمار | Gahshomar
+  
+  **A Modern Persian (Jalali/Shamsi) & Hijri Calendar Library for Java**
+  
+  [![Java Version](https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=openjdk)](https://openjdk.org/)
+  [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+  [![Tests](https://img.shields.io/badge/Tests-133%20Passing-brightgreen?style=for-the-badge)](src/test)
+  [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-purple?style=for-the-badge)]()
+  
+  [English](#english) | [فارسی](#persian)
+  
+</div>
 
 ---
 
-## Why Gahshomar?
+<a name="english"></a>
 
-**Gahshomar** (گاه‌شمار - Persian for "calendar") is a comprehensive date library designed specifically for Persian/Iranian developers. It provides:
+## 🌟 Features
 
-- 🗓️ **Complete Calendar Support** - Persian (Jalali/Shamsi), Hijri (Islamic), and Gregorian
-- 🔄 **Accurate Conversions** - Based on proven astronomical algorithms
-- 🎯 **100+ APIs** - Everything you need for date manipulation
-- ⚡ **Zero Dependencies** - Pure Java, no external libraries
-- 🇮🇷 **Persian-First Design** - Full Persian language support
-- 📱 **Kotlin Compatible** - Works seamlessly with Kotlin projects
-
----
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| 🔄 **Date Conversion** | Convert between Persian, Hijri, and Gregorian calendars |
-| 📅 **Leap Year** | Accurate leap year calculation for all calendars |
-| ➕ **Date Arithmetic** | Add/subtract days, months, years |
-| 📊 **Date Comparison** | Compare dates, check ranges |
-| 🎂 **Age Calculation** | Calculate age with years, months, days |
-| 📝 **Formatting** | Format dates with Persian/English patterns |
-| 🔢 **Persian Numbers** | Convert to/from Persian digits (۱۲۳) |
-| ⏰ **Relative Time** | "امروز", "دیروز", "۳ روز پیش" |
-| 🎉 **Holidays** | Iranian official holidays (solar + lunar) |
-| 📆 **Date Range** | Work with date ranges, count workdays |
-| 🌙 **Hijri Support** | Full Islamic calendar support |
-| 🔍 **Validation** | Comprehensive date validation |
+- ☀️ **Persian Calendar** - Full Jalali/Shamsi calendar support with accurate leap year calculation
+- 🌙 **Hijri Calendar** - Complete Islamic lunar calendar with 30-year cycle
+- 🔄 **Bidirectional Conversion** - Persian ↔ Gregorian ↔ Hijri seamless conversions
+- 📅 **DateTime Support** - Date and time handling with timezone awareness
+- 🇮🇷 **Iran Timezone** - Built-in Asia/Tehran support with DST handling
+- 🎊 **Holidays** - Iranian solar & Islamic lunar holidays
+- 🔢 **Persian Numbers** - Convert digits (۱۲۳ ↔ 123) and numbers to words
+- ⏰ **Relative Time** - Human-readable relative dates (امروز، دیروز، فردا)
+- 📊 **Date Ranges** - Range operations with Stream API support
+- 🚫 **Zero Dependencies** - Pure Java, no external libraries required
+- ✅ **Well Tested** - 133+ unit tests with comprehensive coverage
 
 ---
 
-## Installation
+## 📦 Installation
 
 ### Maven
 
 ```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-
-<dependencies>
-    <dependency>
-        <groupId>com.github.abolpv</groupId>
-        <artifactId>gahshomar</artifactId>
-        <version>1.0.0</version>
-    </dependency>
-</dependencies>
+<dependency>
+    <groupId>io.github.abolpv</groupId>
+    <artifactId>gahshomar</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 ### Gradle
 
 ```groovy
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    implementation 'com.github.abolpv:gahshomar:1.0.0'
-}
+implementation 'io.github.abolpv:gahshomar:1.0.0'
 ```
 
-### Gradle Kotlin DSL
+### Manual
 
-```kotlin
-repositories {
-    maven("https://jitpack.io")
-}
-
-dependencies {
-    implementation("com.github.abolpv:gahshomar:1.0.0")
-}
-```
+Download the JAR from [Releases](https://github.com/AbolDev/gahshomar/releases) and add it to your classpath.
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
-### Create a Persian Date
+### Creating Dates
 
 ```java
-import io.github.abolpv.gahshomar.PersianDate;
+import io.github.abolpv.gahshomar.*;
 
-// From year, month, day
-PersianDate date = PersianDate.of(1403, 10, 15);
-
-// Today
+// Current date
 PersianDate today = PersianDate.now();
 
-// From Gregorian
-PersianDate fromGregorian = PersianDate.from(LocalDate.of(2025, 1, 4));
+// Specific date
+PersianDate date = PersianDate.of(1403, 10, 15);
 
 // Parse from string
 PersianDate parsed = PersianDate.parse("1403/10/15");
 PersianDate parsedPersian = PersianDate.parse("۱۴۰۳/۱۰/۱۵");
 ```
 
-### Convert Between Calendars
+### Date Conversions
 
 ```java
-PersianDate persian = PersianDate.of(1403, 10, 15);
+// Persian to Gregorian
+LocalDate gregorian = PersianDate.of(1403, 1, 1).toGregorian();
+// Result: 2024-03-19
 
-// To Gregorian
-LocalDate gregorian = persian.toGregorian();  // 2025-01-04
+// Gregorian to Persian
+PersianDate persian = PersianDate.from(LocalDate.of(2025, 1, 3));
+// Result: 1403/10/15
 
-// To Hijri
-HijriDate hijri = persian.toHijri();
+// Persian to Hijri
+HijriDate hijri = PersianDate.of(1403, 10, 15).toHijri();
 
-// From Gregorian to Persian
-PersianDate fromGregorian = PersianDate.from(LocalDate.now());
+// Hijri to Persian
+PersianDate fromHijri = HijriDate.of(1446, 7, 3).toPersian();
 ```
 
 ### Date Arithmetic
@@ -152,269 +99,460 @@ PersianDate fromGregorian = PersianDate.from(LocalDate.now());
 ```java
 PersianDate date = PersianDate.of(1403, 10, 15);
 
-// Add/Subtract
-PersianDate nextWeek = date.plusDays(7);
-PersianDate nextMonth = date.plusMonths(1);
-PersianDate lastYear = date.minusYears(1);
+// Add/subtract
+PersianDate future = date.plusDays(30);
+PersianDate past = date.minusMonths(2);
+PersianDate nextYear = date.plusYears(1);
 
-// Difference
-long daysBetween = date.daysUntil(otherDate);
-long monthsBetween = date.monthsUntil(otherDate);
+// Navigation
+PersianDate startOfMonth = date.atStartOfMonth();
+PersianDate endOfMonth = date.atEndOfMonth();
+PersianDate startOfWeek = date.atStartOfWeek();  // Saturday
+PersianDate endOfWeek = date.atEndOfWeek();      // Friday
 ```
 
-### Get Date Information
-
-```java
-PersianDate date = PersianDate.of(1403, 10, 15);
-
-int year = date.getYear();              // 1403
-int month = date.getMonthValue();       // 10
-int day = date.getDayOfMonth();         // 15
-int dayOfYear = date.getDayOfYear();    // 289
-
-String monthName = date.getMonthName();      // دی
-String dayName = date.getDayOfWeekName();    // شنبه
-Season season = date.getSeason();            // WINTER
-
-boolean isLeap = date.isLeapYear();          // true
-int monthLength = date.lengthOfMonth();      // 30
-```
-
-### Format Dates
+### Formatting
 
 ```java
 PersianDate date = PersianDate.of(1403, 10, 15);
 
 // Default format
-date.format();                           // 1403/10/15
+date.format();                    // "1403/10/15"
 
 // Custom patterns
-date.format("yyyy-MM-dd");               // 1403-10-15
-date.format("d MMMM yyyy");              // 15 دی 1403
-date.format("EEEE d MMMM yyyy");         // شنبه 15 دی 1403
+date.format("yyyy-MM-dd");        // "1403-10-15"
+date.format("dd MMMM yyyy");      // "15 دی 1403"
+date.format("EEEE dd MMMM");      // "جمعه 15 دی"
 
-// With Persian digits
-date.format("yyyy/MM/dd", true);         // ۱۴۰۳/۱۰/۱۵
+// Persian digits
+date.format("yyyy/MM/dd", true);  // "۱۴۰۳/۱۰/۱۵"
 
 // Relative time
-date.toRelative();                       // امروز / دیروز / ۳ روز پیش
+date.toRelative();                // "امروز" / "دیروز" / "فردا" / "۳ روز پیش"
 ```
 
-### Calculate Age
+### Date Information
+
+```java
+PersianDate date = PersianDate.of(1403, 10, 15);
+
+date.getMonthName();       // "دی"
+date.getDayOfWeek();       // PersianDayOfWeek.JOMEH (جمعه)
+date.getDayOfYear();       // 289
+date.getQuarter();         // 4
+date.getSeason();          // Season.WINTER (زمستان)
+date.lengthOfMonth();      // 30
+date.lengthOfYear();       // 366 (leap year)
+date.isLeapYear();         // true
+date.isWeekend();          // true (Friday)
+date.isWorkday();          // false
+```
+
+### Age Calculation
 
 ```java
 PersianDate birthDate = PersianDate.of(1370, 5, 15);
-
-// Full age
 Age age = birthDate.getAge();
-age.getYears();                          // 33
-age.getMonths();                         // 5
-age.getDays();                           // 10
-age.toPersianString();                   // ۳۳ سال و ۵ ماه و ۱۰ روز
 
-// Simple
-int years = birthDate.getAgeInYears();   // 33
-
-// Birthday
-boolean isBirthday = birthDate.isBirthdayToday();
-long daysUntil = birthDate.daysUntilNextBirthday();
+age.getYears();           // 33
+age.getMonths();          // 5
+age.getDays();            // 0
+age.toPersianString();    // "۳۳ سال و ۵ ماه"
+age.toEnglishString();    // "33 years, 5 months"
 ```
 
-### Special Dates
+### Persian Numbers
 
 ```java
-PersianDate date = PersianDate.of(1403, 10, 15);
+import io.github.abolpv.gahshomar.format.PersianNumbers;
 
-// Start/End of month
-PersianDate firstOfMonth = date.atStartOfMonth();
-PersianDate lastOfMonth = date.atEndOfMonth();
+// Convert digits
+PersianNumbers.toPersian(1403);          // "۱۴۰۳"
+PersianNumbers.toPersian("1403/10/15");  // "۱۴۰۳/۱۰/۱۵"
+PersianNumbers.toWestern("۱۴۰۳");        // "1403"
 
-// Start/End of year
-PersianDate nowruz = date.atStartOfYear();
-PersianDate endOfYear = date.atEndOfYear();
+// Number to words
+PersianNumbers.toWords(23);              // "بیست و سه"
+PersianNumbers.toWords(1403);            // "یک هزار و چهارصد و سه"
 
-// Start/End of week (Saturday-Friday)
-PersianDate saturday = date.atStartOfWeek();
-PersianDate friday = date.atEndOfWeek();
-
-// Nowruz
-PersianDate nowruz1404 = PersianDate.nowruz(1404);
+// Ordinal numbers
+PersianNumbers.toOrdinal(1);             // "اول"
+PersianNumbers.toOrdinal(15);            // "پانزدهم"
 ```
 
-### Workdays
+### DateTime with Time
 
 ```java
-PersianDate date = PersianDate.of(1403, 10, 15);
+// Create with time
+PersianDateTime dt = PersianDateTime.of(1403, 10, 15, 14, 30, 45);
 
-boolean isWorkday = date.isWorkday();
-boolean isWeekend = date.isWeekend();        // Friday
+// Current datetime
+PersianDateTime now = PersianDateTime.now();
 
-PersianDate nextWorkday = date.nextWorkday();
-long workdays = date.workdaysUntil(otherDate);
+// Time operations
+dt.plusHours(5);
+dt.minusMinutes(30);
+
+// Format
+dt.format("yyyy/MM/dd HH:mm:ss");  // "1403/10/15 14:30:45"
+
+// Convert to Gregorian
+LocalDateTime gregorian = dt.toGregorian();
+```
+
+### Timezone Support
+
+```java
+import io.github.abolpv.gahshomar.zone.*;
+
+// Current time in Iran
+ZonedDateTime iranNow = IranTimeZone.now();
+
+// Zoned Persian DateTime
+ZonedPersianDateTime zdt = ZonedPersianDateTime.of(
+    1403, 10, 15, 14, 30, IranTimeZone.IRAN
+);
+
+// Convert between zones
+ZonedPersianDateTime utc = zdt.withZoneSameInstant(ZoneOffset.UTC);
+
+// DST info
+DSTRule.isDST(PersianDate.now());          // Check if DST is active
+DSTRule.getDSTInfo(PersianDate.now());     // Get DST description
 ```
 
 ### Holidays
 
 ```java
+import io.github.abolpv.gahshomar.holiday.*;
+
+// Persian holidays
 PersianHolidays holidays = PersianHolidays.of(1403);
 
-// All holidays
-List<Holiday> all = holidays.getAll();
+holidays.isHoliday(PersianDate.of(1403, 1, 1));      // true (Nowruz)
+holidays.isOfficialHoliday(date);                    // Check official holidays
+holidays.getHolidaysIn(PersianMonth.FARVARDIN);      // Get month's holidays
+holidays.getNowruz();                                 // Get Nowruz holidays
 
-// Check if holiday
-boolean isHoliday = holidays.isHoliday(date);
-boolean isOfficial = holidays.isOfficialHoliday(date);
-
-// Get holiday info
-Optional<Holiday> holiday = holidays.getHoliday(date);
-
-// Nowruz holidays
-List<Holiday> nowruz = holidays.getNowruz();
+// Hijri holidays  
+HijriHolidays hijriHolidays = HijriHolidays.of(1446);
+hijriHolidays.getAll();                              // All Islamic holidays
+hijriHolidays.startOfRamadan();                      // First day of Ramadan
 ```
 
-### Date Range
+### Date Ranges
 
 ```java
-PersianDate start = PersianDate.of(1403, 10, 1);
-PersianDate end = PersianDate.of(1403, 10, 31);
+import io.github.abolpv.gahshomar.range.*;
 
-DateRange range = DateRange.between(start, end);
+// Create range
+DateRange range = DateRange.between(
+    PersianDate.of(1403, 1, 1),
+    PersianDate.of(1403, 1, 31)
+);
 
-long days = range.getDays();                     // 31
-boolean contains = range.contains(someDate);
-long workdays = range.countWorkdays();
+range.getDays();                          // 31
+range.contains(PersianDate.of(1403, 1, 15));  // true
+range.countWorkdays();                    // Count working days
+range.overlaps(anotherRange);             // Check overlap
 
-// Iterate over range
-for (PersianDate date : range) {
-    System.out.println(date);
-}
+// Month/Year ranges
+DateRange month = DateRange.ofMonth(1403, 1);
+DateRange year = DateRange.ofYear(1403);
+```
 
-// Stream
-range.stream()
-     .filter(PersianDate::isWorkday)
-     .forEach(System.out::println);
+### Date Streams
+
+```java
+import io.github.abolpv.gahshomar.range.DateStream;
+
+// Stream of dates
+DateStream.range(start, end)
+    .filter(d -> d.isWorkday())
+    .forEach(System.out::println);
+
+// All days in a month
+DateStream.ofMonth(1403, 1).count();      // 31
+
+// Only workdays
+DateStream.workdays(start, end);
+
+// Only Fridays
+DateStream.fridays(start, end);
+
+// Leap years in range
+DateStream.leapYears(1390, 1410);
+```
+
+### Periods
+
+```java
+import io.github.abolpv.gahshomar.range.Period;
+
+// Create period
+Period period = Period.of(2, 3, 15);      // 2 years, 3 months, 15 days
+
+// Calculate period between dates
+Period between = Period.between(date1, date2);
+
+// Add period to date
+PersianDate result = period.addTo(date);
+
+// Format
+period.toPersianString();   // "۲ سال و ۳ ماه و ۱۵ روز"
+period.toString();          // "P2Y3M15D" (ISO-8601)
 ```
 
 ### Hijri Calendar
 
 ```java
 // Create Hijri date
-HijriDate hijri = HijriDate.of(1446, 6, 15);
-HijriDate today = HijriDate.now();
+HijriDate hijri = HijriDate.of(1446, 9, 1);
+
+// Ramadan utilities
+HijriDate.startOfRamadan(1446);
+HijriDate.isRamadan(hijri);
+
+// Sacred months
+hijri.getMonth().isSacredMonth();
 
 // Convert
-LocalDate gregorian = hijri.toGregorian();
 PersianDate persian = hijri.toPersian();
-
-// Special dates
-HijriDate ramadan = HijriDate.startOfRamadan(1446);
-HijriDate eidFitr = HijriDate.eidAlFitr(1446);
-HijriDate eidAdha = HijriDate.eidAlAdha(1446);
-
-// Check
-boolean isRamadan = hijri.isRamadan();
-boolean isSacred = hijri.isSacredMonth();
-```
-
-### Persian Numbers
-
-```java
-// To Persian digits
-PersianNumbers.toPersian(123);           // ۱۲۳
-PersianNumbers.toPersian("1403/10/15");  // ۱۴۰۳/۱۰/۱۵
-
-// To Western digits
-PersianNumbers.toWestern("۱۲۳");         // 123
-
-// Parse
-int num = PersianNumbers.parseInt("۱۲۳");  // 123
-
-// To words
-PersianNumbers.toWords(23);              // بیست و سه
-PersianNumbers.toOrdinal(1);             // اول
+LocalDate gregorian = hijri.toGregorian();
 ```
 
 ---
 
-## API Reference
+## 📚 Package Structure
 
-### PersianDate
-
-| Method | Description |
-|--------|-------------|
-| `of(year, month, day)` | Create from components |
-| `now()` | Current date |
-| `from(LocalDate)` | From Gregorian |
-| `parse(String)` | Parse date string |
-| `toGregorian()` | Convert to Gregorian |
-| `toHijri()` | Convert to Hijri |
-| `plusDays/Months/Years(n)` | Add time |
-| `minusDays/Months/Years(n)` | Subtract time |
-| `daysUntil(date)` | Days between dates |
-| `getAge()` | Calculate age |
-| `format(pattern)` | Format date |
-| `toRelative()` | Relative time string |
-| `isLeapYear()` | Check leap year |
-| `isWorkday()` | Check if workday |
-
-### HijriDate
-
-| Method | Description |
-|--------|-------------|
-| `of(year, month, day)` | Create from components |
-| `now()` | Current date |
-| `toGregorian()` | Convert to Gregorian |
-| `toPersian()` | Convert to Persian |
-| `startOfRamadan(year)` | First of Ramadan |
-| `eidAlFitr(year)` | Eid al-Fitr date |
-| `eidAlAdha(year)` | Eid al-Adha date |
-| `isRamadan()` | Check if Ramadan |
+```
+io.github.abolpv.gahshomar
+├── PersianDate          // Main Persian date class
+├── PersianDateTime      // Persian date with time
+├── HijriDate            // Hijri/Islamic date
+├── HijriDateTime        // Hijri date with time
+├── core/
+│   ├── JalaliAlgorithm  // Persian calendar algorithms
+│   ├── HijriAlgorithm   // Hijri calendar algorithms
+│   ├── DateConverter    // Conversion utilities
+│   ├── LeapYearRule     // Leap year calculations
+│   └── CalendarType     // Calendar type enum
+├── temporal/
+│   ├── PersianMonth     // Persian month enum
+│   ├── HijriMonth       // Hijri month enum
+│   ├── PersianDayOfWeek // Day of week enum
+│   ├── Season           // Season enum
+│   └── Age              // Age calculation
+├── format/
+│   ├── DateFormatter    // Pattern-based formatting
+│   ├── DateParser       // Auto-detecting parser
+│   ├── PersianNumbers   // Number conversion
+│   ├── RelativeTime     // Relative time formatting
+│   └── FormatPattern    // Predefined patterns
+├── holiday/
+│   ├── PersianHolidays  // Iranian holidays
+│   ├── HijriHolidays    // Islamic holidays
+│   ├── Holiday          // Holiday model
+│   └── Occasion         // Non-holiday occasions
+├── range/
+│   ├── DateRange        // Date range operations
+│   ├── DateStream       // Stream utilities
+│   └── Period           // Date periods
+├── zone/
+│   ├── IranTimeZone     // Iran timezone utilities
+│   ├── ZonedPersianDateTime // Timezone-aware datetime
+│   └── DSTRule          // DST calculations
+├── util/
+│   ├── DateUtils        // Date utilities
+│   └── Preconditions    // Validation helpers
+└── exception/
+    ├── DateException    // Base exception
+    ├── InvalidDateException
+    ├── ParseException
+    └── ConversionException
+```
 
 ---
 
-## Requirements
+## 🔧 Requirements
 
 - **Java 17** or higher
 - No external dependencies
 
 ---
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🧪 Testing
 
 ```bash
-# Clone
-git clone https://github.com/abolpv/gahshomar.git
-cd gahshomar
-
-# Build
-mvn clean compile
-
-# Test
+# Run all tests
 mvn test
+
+# Run specific test class
+mvn test -Dtest=GahshomarTest
 ```
 
 ---
 
-## License
+## 📄 License
 
-This project is licensed under the **Apache License 2.0**.
-
----
-
-## Author
-
-<p align="center">
-  <strong>Abolfazl Azizi</strong>
-  <br>
-  <a href="https://github.com/abolpv">GitHub</a>
-</p>
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-<p align="center">
-  Made with ❤️ for Persian developers
-  <br><br>
-  ⭐ Star this repo if you find it useful!
-</p>
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 👨‍💻 Author
+
+**Abolfazl Azizi** - [AbolDev](https://github.com/AbolDev)
+
+---
+
+<a name="persian"></a>
+
+<div dir="rtl">
+
+## 🌟 ویژگی‌ها
+
+- ☀️ **تقویم شمسی** - پشتیبانی کامل از تقویم جلالی/شمسی با محاسبه دقیق سال کبیسه
+- 🌙 **تقویم هجری** - تقویم قمری اسلامی با چرخه ۳۰ ساله
+- 🔄 **تبدیل دوطرفه** - تبدیل شمسی ↔ میلادی ↔ هجری
+- 📅 **پشتیبانی از زمان** - مدیریت تاریخ و زمان با آگاهی از منطقه زمانی
+- 🇮🇷 **منطقه زمانی ایران** - پشتیبانی داخلی از Asia/Tehran با مدیریت تغییر ساعت
+- 🎊 **تعطیلات** - تعطیلات شمسی ایران و تعطیلات قمری اسلامی
+- 🔢 **اعداد فارسی** - تبدیل ارقام (۱۲۳ ↔ 123) و اعداد به حروف
+- ⏰ **زمان نسبی** - تاریخ‌های نسبی خوانا (امروز، دیروز، فردا)
+- 📊 **بازه تاریخ** - عملیات بازه با پشتیبانی Stream API
+- 🚫 **بدون وابستگی** - جاوای خالص، بدون کتابخانه خارجی
+- ✅ **تست شده** - بیش از ۱۳۳ تست واحد
+
+---
+
+## 📦 نصب
+
+### Maven
+
+</div>
+
+```xml
+<dependency>
+    <groupId>io.github.abolpv</groupId>
+    <artifactId>gahshomar</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+<div dir="rtl">
+
+### Gradle
+
+</div>
+
+```groovy
+implementation 'io.github.abolpv:gahshomar:1.0.0'
+```
+
+<div dir="rtl">
+
+---
+
+## 🚀 شروع سریع
+
+### ایجاد تاریخ
+
+</div>
+
+```java
+import io.github.abolpv.gahshomar.*;
+
+// تاریخ امروز
+PersianDate today = PersianDate.now();
+
+// تاریخ مشخص
+PersianDate date = PersianDate.of(1403, 10, 15);
+
+// پارس از رشته
+PersianDate parsed = PersianDate.parse("1403/10/15");
+PersianDate parsedPersian = PersianDate.parse("۱۴۰۳/۱۰/۱۵");
+```
+
+<div dir="rtl">
+
+### تبدیل تاریخ
+
+</div>
+
+```java
+// شمسی به میلادی
+LocalDate gregorian = PersianDate.of(1403, 1, 1).toGregorian();
+
+// میلادی به شمسی
+PersianDate persian = PersianDate.from(LocalDate.of(2025, 1, 3));
+
+// شمسی به هجری
+HijriDate hijri = PersianDate.of(1403, 10, 15).toHijri();
+```
+
+<div dir="rtl">
+
+### محاسبات تاریخ
+
+</div>
+
+```java
+PersianDate date = PersianDate.of(1403, 10, 15);
+
+// اضافه/کم کردن
+date.plusDays(30);      // ۳۰ روز بعد
+date.minusMonths(2);    // ۲ ماه قبل
+date.plusYears(1);      // یک سال بعد
+
+// ناوبری
+date.atStartOfMonth();  // اول ماه
+date.atEndOfMonth();    // آخر ماه
+date.atStartOfWeek();   // شنبه
+date.atEndOfWeek();     // جمعه
+```
+
+<div dir="rtl">
+
+### محاسبه سن
+
+</div>
+
+```java
+PersianDate birthDate = PersianDate.of(1370, 5, 15);
+Age age = birthDate.getAge();
+
+age.toPersianString();  // "۳۳ سال و ۵ ماه"
+```
+
+<div dir="rtl">
+
+### اعداد فارسی
+
+</div>
+
+```java
+PersianNumbers.toPersian(1403);     // "۱۴۰۳"
+PersianNumbers.toWestern("۱۴۰۳");   // "1403"
+PersianNumbers.toWords(23);         // "بیست و سه"
+PersianNumbers.toOrdinal(1);        // "اول"
+```
+
+---
+
+<div align="center">
+
+**ساخته شده با ❤️ توسط [ابوالفضل عزیزی](https://github.com/AbolDev)**
+
+</div>

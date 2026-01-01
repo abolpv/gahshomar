@@ -1,42 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    <!-- Gradient for modern look -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#34d399;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F43F5E;stop-opacity:1" />
     </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#6366F1" flood-opacity="0.3"/>
+    </filter>
   </defs>
   
-  <!-- Outer circle (calendar ring) -->
-  <circle cx="60" cy="60" r="52" fill="none" stroke="url(#grad1)" stroke-width="3"/>
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#0F172A"/>
   
-  <!-- Inner calendar grid suggestion -->
-  <circle cx="60" cy="60" r="40" fill="url(#grad1)" opacity="0.1"/>
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#primaryGrad)" stroke-width="3" opacity="0.6"/>
   
-  <!-- Sun symbol (for solar calendar) -->
-  <circle cx="60" cy="60" r="16" fill="url(#grad2)"/>
-  
-  <!-- Sun rays -->
-  <g stroke="url(#grad2)" stroke-width="2.5" stroke-linecap="round">
-    <line x1="60" y1="38" x2="60" y2="28"/>
-    <line x1="60" y1="92" x2="60" y2="82"/>
-    <line x1="38" y1="60" x2="28" y2="60"/>
-    <line x1="92" y1="60" x2="82" y2="60"/>
-    <line x1="44" y1="44" x2="37" y2="37"/>
-    <line x1="76" y1="76" x2="83" y2="83"/>
-    <line x1="44" y1="76" x2="37" y2="83"/>
-    <line x1="76" y1="44" x2="83" y2="37"/>
+  <!-- Calendar base shape -->
+  <g filter="url(#shadow)">
+    <!-- Main calendar body -->
+    <rect x="96" y="120" width="320" height="280" rx="24" fill="#1E293B"/>
+    
+    <!-- Calendar header -->
+    <rect x="96" y="120" width="320" height="72" rx="24" fill="url(#primaryGrad)"/>
+    <rect x="96" y="168" width="320" height="24" fill="url(#primaryGrad)"/>
+    
+    <!-- Calendar rings -->
+    <circle cx="156" cy="120" r="12" fill="#334155"/>
+    <rect x="150" y="96" width="12" height="36" rx="6" fill="#64748B"/>
+    <circle cx="356" cy="120" r="12" fill="#334155"/>
+    <rect x="350" y="96" width="12" height="36" rx="6" fill="#64748B"/>
   </g>
   
-  <!-- Center highlight -->
-  <circle cx="56" cy="56" r="5" fill="white" opacity="0.3"/>
-  
-  <!-- Small moon crescent (for Hijri) -->
-  <g transform="translate(85, 25)">
-    <circle cx="10" cy="10" r="8" fill="url(#grad2)"/>
-    <circle cx="13" cy="8" r="6" fill="#1a1a2e"/>
+  <!-- Persian numerals grid -->
+  <g fill="#94A3B8" font-family="Tahoma, sans-serif" font-size="28" text-anchor="middle">
+    <!-- Row 1 -->
+    <text x="156" y="250">۱</text>
+    <text x="216" y="250">۲</text>
+    <text x="276" y="250">۳</text>
+    <text x="336" y="250">۴</text>
+    
+    <!-- Row 2 -->
+    <text x="156" y="300">۵</text>
+    <text x="216" y="300">۶</text>
+    <text x="276" y="300">۷</text>
+    <text x="336" y="300">۸</text>
+    
+    <!-- Row 3 -->
+    <text x="156" y="350">۹</text>
+    <text x="216" y="350">۱۰</text>
+    <text x="336" y="350">۱۲</text>
   </g>
+  
+  <!-- Highlighted date (11) -->
+  <circle cx="276" cy="342" r="28" fill="url(#accentGrad)"/>
+  <text x="276" y="352" fill="white" font-family="Tahoma, sans-serif" font-size="28" text-anchor="middle" font-weight="bold">۱۱</text>
+  
+  <!-- Month name in header -->
+  <text x="256" y="165" fill="white" font-family="Tahoma, sans-serif" font-size="26" text-anchor="middle" font-weight="bold">فروردین</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="96" cy="420" r="40" fill="url(#primaryGrad)" opacity="0.15"/>
+  <circle cx="416" cy="140" r="30" fill="url(#accentGrad)" opacity="0.15"/>
+  
+  <!-- Bottom accent line -->
+  <rect x="176" y="388" width="160" height="4" rx="2" fill="url(#primaryGrad)" opacity="0.6"/>
 </svg>
