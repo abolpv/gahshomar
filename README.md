@@ -54,7 +54,7 @@ implementation 'io.github.abolpv:gahshomar:1.0.0'
 
 ### Manual
 
-Download the JAR from [Releases](https://github.com/AbolDev/gahshomar/releases) and add it to your classpath.
+Download the JAR from [Releases](https://github.com/abolpv/gahshomar/releases) and add it to your classpath.
 
 ---
 
@@ -413,7 +413,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 👨‍💻 Author
 
-**Abolfazl Azizi** - [AbolDev](https://github.com/AbolDev)
+**Abolfazl** - [abolpv](https://github.com/abolpv)
 
 ---
 
@@ -553,6 +553,6 @@ PersianNumbers.toOrdinal(1);        // "اول"
 
 <div align="center">
 
-**ساخته شده با ❤️ توسط [ابوالفضل عزیزی](https://github.com/AbolDev)**
+**Made with ❤️ by [Abolfazl](https://github.com/abolpv)**
 
 </div>
