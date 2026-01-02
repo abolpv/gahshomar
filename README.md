@@ -4,28 +4,42 @@
   # گاه‌شمار | Gahshomar
   
   **A Modern Persian (Jalali/Shamsi) & Hijri Calendar Library for Java**
-  
+
   [![Java Version](https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=openjdk)](https://openjdk.org/)
   [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
   [![Tests](https://img.shields.io/badge/Tests-133%20Passing-brightgreen?style=for-the-badge)](src/test)
   [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-purple?style=for-the-badge)]()
-  [![Build Status](https://github.com/abolpv/gahshomar/actions/workflows/maven.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions)
-  [![JitPack](https://jitpack.io/v/abolpv/gahshomar.svg)](https://jitpack.io/#abolpv/gahshomar)
-  [![GitHub release](https://img.shields.io/github/v/release/abolpv/gahshomar?style=for-the-badge)](https://github.com/abolpv/gahshomar/releases)
-  [![CodeQL](https://github.com/abolpv/gahshomar/actions/workflows/codeql.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions/workflows/codeql.yml)
-  [![Dependency Review](https://github.com/abolpv/gahshomar/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions/workflows/dependency-review.yml)
-
-  [English](#english) | [فارسی](#persian)
   
+  [![Build Status](https://github.com/abolpv/gahshomar/actions/workflows/maven.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions)
+  [![CodeQL](https://github.com/abolpv/gahshomar/actions/workflows/codeql.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions/workflows/codeql.yml)
+  [![JitPack](https://jitpack.io/v/abolpv/gahshomar.svg)](https://jitpack.io/#abolpv/gahshomar)
+  [![GitHub release](https://img.shields.io/github/v/release/abolpv/gahshomar)](https://github.com/abolpv/gahshomar/releases)
+
+  [English](#-features) | [فارسی](#-ویژگیها)
+
 </div>
 
 ---
 
-<a name="english"></a>
+## ✨ Why Gahshomar?
+
+| Feature | Gahshomar | Others |
+|---------|-----------|--------|
+| 🚫 Zero Dependencies | ✅ | ❌ Usually require ICU4J |
+| ☀️ Persian Calendar | ✅ Full support | ✅ |
+| 🌙 Hijri Calendar | ✅ Full support | ⚠️ Limited |
+| 🔄 Bidirectional Conversion | ✅ Persian↔Gregorian↔Hijri | ⚠️ Usually one-way |
+| 🔢 Persian Numbers | ✅ Digits + Words + Ordinal | ❌ |
+| 🎊 Iranian Holidays | ✅ Solar + Lunar | ❌ |
+| ⏰ Relative Time | ✅ امروز، دیروز، فردا | ❌ |
+| 📊 Stream API | ✅ DateStream, DateRange | ❌ |
+| 🇮🇷 Iran Timezone + DST | ✅ Built-in | ❌ |
+
+---
 
 ## 🌟 Features
 
-- ☀️ **Persian Calendar** - Full Jalali/Shamsi calendar support with accurate leap year calculation
+- ☀️ **Persian Calendar** - Full Jalali/Shamsi calendar support with accurate leap year calculation (33-year cycle)
 - 🌙 **Hijri Calendar** - Complete Islamic lunar calendar with 30-year cycle
 - 🔄 **Bidirectional Conversion** - Persian ↔ Gregorian ↔ Hijri seamless conversions
 - 📅 **DateTime Support** - Date and time handling with timezone awareness
@@ -41,20 +55,45 @@
 
 ## 📦 Installation
 
-### Maven
+### Maven (JitPack) - Recommended
 
 ```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
 <dependency>
-    <groupId>io.github.abolpv</groupId>
+    <groupId>com.github.abolpv</groupId>
     <artifactId>gahshomar</artifactId>
-    <version>1.0.0</version>
+    <version>v1.0.2</version>
 </dependency>
 ```
 
-### Gradle
+### Gradle (JitPack)
 
 ```groovy
-implementation 'io.github.abolpv:gahshomar:1.0.0'
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.abolpv:gahshomar:v1.0.2'
+}
+```
+
+### Gradle Kotlin DSL
+
+```kotlin
+repositories {
+    maven("https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.github.abolpv:gahshomar:v1.0.2")
+}
 ```
 
 ### Manual
@@ -76,7 +115,7 @@ PersianDate today = PersianDate.now();
 // Specific date
 PersianDate date = PersianDate.of(1403, 10, 15);
 
-// Parse from string
+// Parse from string (supports Persian digits!)
 PersianDate parsed = PersianDate.parse("1403/10/15");
 PersianDate parsedPersian = PersianDate.parse("۱۴۰۳/۱۰/۱۵");
 ```
@@ -328,6 +367,18 @@ LocalDate gregorian = hijri.toGregorian();
 
 ---
 
+## 📊 API Statistics
+
+| Metric | Value |
+|--------|-------|
+| **Public APIs** | 645+ |
+| **Unit Tests** | 133 |
+| **Source Files** | 36 |
+| **Dependencies** | Zero |
+| **Min Java Version** | 17 |
+
+---
+
 ## 📚 Package Structure
 
 ```
@@ -400,7 +451,7 @@ mvn test -Dtest=GahshomarTest
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -416,19 +467,27 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
+## 📞 Support
+
+- 🐛 [Report Bug](https://github.com/abolpv/gahshomar/issues)
+- 💡 [Request Feature](https://github.com/abolpv/gahshomar/issues)
+- 📖 [Documentation](https://github.com/abolpv/gahshomar#readme)
+
+---
+
 ## 👨‍💻 Author
 
 **Abolfazl** - [abolpv](https://github.com/abolpv)
 
 ---
 
-<a name="persian"></a>
+<a name="-ویژگیها"></a>
 
 <div dir="rtl">
 
 ## 🌟 ویژگی‌ها
 
-- ☀️ **تقویم شمسی** - پشتیبانی کامل از تقویم جلالی/شمسی با محاسبه دقیق سال کبیسه
+- ☀️ **تقویم شمسی** - پشتیبانی کامل از تقویم جلالی/شمسی با محاسبه دقیق سال کبیسه (چرخه ۳۳ ساله)
 - 🌙 **تقویم هجری** - تقویم قمری اسلامی با چرخه ۳۰ ساله
 - 🔄 **تبدیل دوطرفه** - تبدیل شمسی ↔ میلادی ↔ هجری
 - 📅 **پشتیبانی از زمان** - مدیریت تاریخ و زمان با آگاهی از منطقه زمانی
@@ -444,15 +503,22 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📦 نصب
 
-### Maven
+### Maven (JitPack)
 
 </div>
 
 ```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
 <dependency>
-    <groupId>io.github.abolpv</groupId>
+    <groupId>com.github.abolpv</groupId>
     <artifactId>gahshomar</artifactId>
-    <version>1.0.0</version>
+    <version>v1.0.2</version>
 </dependency>
 ```
 
@@ -463,7 +529,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 </div>
 
 ```groovy
-implementation 'io.github.abolpv:gahshomar:1.0.0'
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.abolpv:gahshomar:v1.0.2'
+}
 ```
 
 <div dir="rtl">
@@ -485,7 +557,7 @@ PersianDate today = PersianDate.now();
 // تاریخ مشخص
 PersianDate date = PersianDate.of(1403, 10, 15);
 
-// پارس از رشته
+// پارس از رشته (با پشتیبانی از اعداد فارسی!)
 PersianDate parsed = PersianDate.parse("1403/10/15");
 PersianDate parsedPersian = PersianDate.parse("۱۴۰۳/۱۰/۱۵");
 ```
