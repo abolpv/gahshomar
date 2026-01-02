@@ -12,6 +12,8 @@
   [![Build Status](https://github.com/abolpv/gahshomar/actions/workflows/maven.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions)
   [![JitPack](https://jitpack.io/v/abolpv/gahshomar.svg)](https://jitpack.io/#abolpv/gahshomar)
   [![GitHub release](https://img.shields.io/github/v/release/abolpv/gahshomar?style=for-the-badge)](https://github.com/abolpv/gahshomar/releases)
+  [![CodeQL](https://github.com/abolpv/gahshomar/actions/workflows/codeql.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions/workflows/codeql.yml)
+  [![Dependency Review](https://github.com/abolpv/gahshomar/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions/workflows/dependency-review.yml)
 
   [English](#english) | [فارسی](#persian)
   
