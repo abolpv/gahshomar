@@ -1,30 +1,108 @@
-name: Java CI with Maven
+name: Java CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main, master ]
+    tags:
+      - 'v*'
   pull_request:
-    branches: [ "main" ]
+    branches: [ main, master ]
 
 jobs:
+  # Build and Test
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        java-version: [ 17, 21 ]
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-    
-    - name: Build with Maven
-      run: mvn -B compile --file pom.xml
-    
-    - name: Run Tests
-      run: mvn -B test --file pom.xml
-    
-    - name: Package JAR
-      run: mvn -B package --file pom.xml -DskipTests
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ☕ Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java-version }}
+          distribution: 'temurin'
+          cache: maven
+
+      - name: 🔨 Build with Maven
+        run: mvn -B compile --file pom.xml
+
+      - name: 🧪 Run Tests
+        run: mvn -B test --file pom.xml
+
+      - name: 📊 Generate Test Report
+        if: always()
+        run: mvn -B surefire-report:report-only --file pom.xml
+
+      - name: 📦 Package JAR
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: 📤 Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gahshomar-java${{ matrix.java-version }}
+          path: target/*.jar
+
+  # Create Release (only on tags)
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ☕ Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: 📦 Build Release JAR
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: 🏷️ Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: 🚀 Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Gahshomar v${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ## 🎉 Gahshomar v${{ steps.get_version.outputs.VERSION }}
+            
+            ### 📦 Installation
+            
+            **Maven:**
+  ```xml
+  <dependency>
+  <groupId>io.github.abolpv</groupId>
+  <artifactId>gahshomar</artifactId>
+  <version>${{ steps.get_version.outputs.VERSION }}</version>
+  </dependency>
+  ```
+
+  **JitPack:**
+  ```xml
+  <dependency>
+  <groupId>com.github.abolpv</groupId>
+  <artifactId>gahshomar</artifactId>
+  <version>v${{ steps.get_version.outputs.VERSION }}</version>
+  </dependency>
+  ```
+  
+  ### 📋 Changes
+  See [CHANGELOG](CHANGELOG.md) for details.
+files: |
+  target/*.jar
+draft: false
+prerelease: false
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -9,7 +9,10 @@
   [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
   [![Tests](https://img.shields.io/badge/Tests-133%20Passing-brightgreen?style=for-the-badge)](src/test)
   [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-purple?style=for-the-badge)]()
-  
+  [![Build Status](https://github.com/abolpv/gahshomar/actions/workflows/maven.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions)
+  [![JitPack](https://jitpack.io/v/abolpv/gahshomar.svg)](https://jitpack.io/#abolpv/gahshomar)
+  [![GitHub release](https://img.shields.io/github/v/release/abolpv/gahshomar?style=for-the-badge)](https://github.com/abolpv/gahshomar/releases)
+
   [English](#english) | [فارسی](#persian)
   
 </div>
