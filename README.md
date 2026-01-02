@@ -6,7 +6,7 @@
   **A Modern Persian (Jalali/Shamsi) & Hijri Calendar Library for Java**
   
   [![Java Version](https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=openjdk)](https://openjdk.org/)
-  [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+  [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
   [![Tests](https://img.shields.io/badge/Tests-133%20Passing-brightgreen?style=for-the-badge)](src/test)
   [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-purple?style=for-the-badge)]()
   [![Build Status](https://github.com/abolpv/gahshomar/actions/workflows/maven.yml/badge.svg)](https://github.com/abolpv/gahshomar/actions)
