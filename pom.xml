@@ -17,13 +17,6 @@
     </description>
     <url>https://github.com/abolpv/gahshomar</url>
 
-    <developers>
-        <developer>
-            <name>Abolfazl Azizi</name>
-            <url>https://github.com/abolpv</url>
-        </developer>
-    </developers>
-
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -111,13 +104,6 @@
             <url>https://jitpack.io</url>
         </repository>
     </distributionManagement>
-
-    <!-- SCM Info -->
-    <scm>
-        <connection>scm:git:git://github.com/abolpv/gahshomar.git</connection>
-        <developerConnection>scm:git:ssh://github.com:abolpv/gahshomar.git</developerConnection>
-        <url>https://github.com/abolpv/gahshomar</url>
-    </scm>
 
     <!-- Issue Management -->
     <issueManagement>
